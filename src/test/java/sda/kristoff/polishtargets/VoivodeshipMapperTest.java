@@ -2,6 +2,7 @@ package sda.kristoff.polishtargets;
 
 import org.junit.Assert;
 import org.junit.Test;
+import sda.kristoff.polishtargets.util.TestDataProvider;
 
 import java.util.List;
 import java.util.Map;
@@ -15,12 +16,7 @@ public class VoivodeshipMapperTest {
     @Test
     public void testMapping(){
         //given
-        List<String> rawData = List.of(
-       "02;;;;DOLNOŚLĄSKIE;województwo;2020-01-01",
-       "02;01;;;bolesławiecki;powiat;2020-01-01",
-       "02;01;01;1;Bolesławiec;gmina miejska;2020-01-01",
-       "02;01;02;2;Bolesławiec;gmina wiejska;2020-01-01",
-       "67;;;;PRUSY KRÓLEWSKIE;województwo;2020-01-01");
+        List<String> rawData = TestDataProvider.rawData;
 
         //when
         Map<Integer, String> results = VoivodeshipMapper.mapData(rawData);
