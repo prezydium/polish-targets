@@ -3,8 +3,6 @@ package sda.kristoff.polishtargets;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
 public class VoivodeshipMapper {
 
