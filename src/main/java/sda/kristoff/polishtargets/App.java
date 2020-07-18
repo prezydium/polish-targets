@@ -7,5 +7,6 @@ public class App {
         System.out.println("Hello World!");
         List<String> loadedRows = DataLoader.loadFile("TERC.csv");
         System.out.println(loadedRows);
+        VoivodeshipMapper.mapData(loadedRows);
     }
 }
