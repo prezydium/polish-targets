@@ -25,4 +25,13 @@ public abstract class Location {
     }
 
     public abstract String sayGreeting();
+
+    @Override
+    public String toString() {
+        return "Location{" +
+                "name='" + name + '\'' +
+                ", voivodeship='" + voivodeship + '\'' +
+                ", type=" + type +
+                '}';
+    }
 }

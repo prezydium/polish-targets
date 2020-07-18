@@ -9,7 +9,6 @@ public class App {
     public static void main(String[] args) {
         System.out.println("Polish Targets App has started");
         List<String> loadedRows = DataLoader.loadFile("TERC.csv");
-        System.out.println(loadedRows);
         Map<Integer, String> voivodeships = VoivodeshipMapper.mapData(loadedRows);
         List<Location> locations = LocationMapper.mapLocations(loadedRows, voivodeships);
         Location randomLocation = VacationTargetGenerator.getRandomLocation(locations);
