@@ -22,16 +22,15 @@ public class LocationAnalyzer {
                 .collect(Collectors.toList());
     }
 
-    public static Map<String, List<Location>> getLongestNameLocationsByVoivodeships(List<Location> locations){
+    public static Map<String, List<Location>> getLongestNameLocationsByVoivodeships(List<Location> locations) {
         Map<String, List<Location>> longestNamesByVoivodeships = new HashMap<>();
         locations.stream()
                 .collect(Collectors.groupingBy(location -> location.getVoivodeship()))
-        .forEach((key, value) ->{
-            longestNamesByVoivodeships.put(key, getLongestNameLocations(value));
-        } );
+                .forEach((key, value) -> {
+                    longestNamesByVoivodeships.put(key, getLongestNameLocations(value));
+                });
         return longestNamesByVoivodeships;
     }
-
 
 
 }
