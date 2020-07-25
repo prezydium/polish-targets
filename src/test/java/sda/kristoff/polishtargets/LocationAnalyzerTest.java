@@ -7,6 +7,7 @@ import sda.kristoff.polishtargets.model.Village;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import static org.junit.Assert.assertEquals;
@@ -50,4 +51,14 @@ public class LocationAnalyzerTest {
         assertTrue(resultNames.contains("Pcim Dolny"));
     }
 
+    @Test
+    public void testByVoivodeshipFiltering() {
+        Map<String, List<Location>> result = LocationAnalyzer.getLongestNameLocationsByVoivodeships(testLocations);
+
+        assertEquals(2, result.keySet().size());
+        List<Location> warszawskieVoi = result.get("WARSZAWSKIE");
+        assertEquals(1, warszawskieVoi.size());
+        List<Location> koszalinskieVoi = result.get("KOSZALIŃSKIE");
+        assertEquals(2, koszalinskieVoi.size());
+    }
 }
